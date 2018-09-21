@@ -1,5 +1,7 @@
 # RS485_energy_monitor  based on the  emontx shield
 this is a diverter  and energy monitor based on the emontx shield using wifi to transmit MQTT data to my open wrt router  energy monitor that is setup with collectd-MQTT module . plus it controlls the  a diverting module and screen via a rs485 module
+
+
 GTI-LIMITER_DIVERTER_SERIAL_A is a basic version that only set up to speak to the  display module/diverter 
 GTI-LIMITER_DIVERTER_SERIAL_A_MULTI is a  control that set up  for use with multiple SSR control  or display module
 
