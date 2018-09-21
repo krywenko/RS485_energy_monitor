@@ -3,6 +3,7 @@ this is a diverter  and energy monitor based on the emontx shield using wifi to 
 
 
 GTI-LIMITER_DIVERTER_SERIAL_A is a basic version that only set up to speak to the  display module/diverter 
+
 GTI-LIMITER_DIVERTER_SERIAL_A_MULTI is a  control that set up  for use with multiple SSR control  or display module
 
 energy7Mon_rs485_slave_a  is the dislay module and single diverter
