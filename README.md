@@ -11,3 +11,5 @@ SERial_READ_Publish _openwrt  -- is MQTT tranfere agent for the R3 that is loade
 RS485 and  RS485esp are the required rs485 libiries 
 
 hardware required is found here  and if you need help  you can comment there as well
+
+https://community.openenergymonitor.org/t/energy-diverter-based-on-rs485-wemos-uno-wifi-r3-r2-and-emontx-shield/8577
