@@ -598,7 +598,13 @@ start =0;
 
 void loop()
 {
+
+   if (millis() - runTime1 >=(500)){
+  runTime1=millis();
+  scan++;
+   }
   scan6++;
+  
  // Serial.println(scan6);
  // Serial.println(pulse);
   //if(RS485_ReadPlainMessage(fAvailable,fRead,message))
@@ -643,7 +649,9 @@ if (scan6 >1000000){
 
 void parseCommand(String com)
 {
-  scan++; 
+
+  
+ // scan++; 
 //char test1[5];
   String part1;
   String part2;
@@ -702,7 +710,7 @@ void parseCommand(String com)
     String raw_CMD;
     inString5=part2;
     pulse = (part2.toInt());
-   analogWrite(triac, pulse); // primary write to 1st triac
+   analogWrite(triac, pulse << 2); // primary write to 1st triac
     scan6 = 0;
   }
 
@@ -716,10 +724,10 @@ x=scan; //stepping function for graphs X axis
   //  y = tempC; /// Y axis
  double Tinc = 3600;
  double Tinc2 = 3600;
-    Tinc = (Tinc*2);//time delay compensation
+    Tinc = (Tinc*2);
     Tinc2 = (Tinc2*2);
     //double Time= 28800;
-    double Time= 14400;
+    double Time= 14400;  /// seconds to display  hour format
     
      Time =(Time *2) ;//timedelay compensation 
     Graph(tft, x, y, 50, 75, 260, 60, 0, Time, Tinc, 0, 4, 1, "kw", "hrs", "Solar/Grid", DKBLUE, RED, GREEN, WHITE, BLACK, graph_3);
@@ -727,7 +735,7 @@ x=scan; //stepping function for graphs X axis
    Graph2(tft, x, y, 50, 75, 260, 60, 0, Time, Tinc2, 0, 4, 1, "kw", "hrs", "", DKBLUE, RED, YELLOW, WHITE, BLACK, graph_4);
    
    
-   if (millis() - runTime >=(60000* ((Time/2)/60))){
+   if (millis() - runTime >=(Time*600)){  ///clear  graphs and redraw from beginning
   runTime=millis();
  //delay(1000);
  tft.fillScreen(BLACK);
